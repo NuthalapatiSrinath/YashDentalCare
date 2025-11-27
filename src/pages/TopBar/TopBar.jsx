@@ -128,12 +128,12 @@ export default function TopBar() {
             >
               Treatments
             </button>
-            <button
+            {/* <button
               onClick={() => handleNavigation("/gallery")}
               className={styles.navLink}
             >
               Gallery
-            </button>
+            </button> */}
 
             <button
               onClick={() => handleNavigation("/blogs")}

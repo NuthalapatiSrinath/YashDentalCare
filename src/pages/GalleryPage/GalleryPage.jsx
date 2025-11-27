@@ -103,7 +103,7 @@ export default function GalleryPage() {
       </div>
 
       {/* MODAL */}
-      {modalOpen && (
+      {/* {modalOpen && (
         <div className={styles.modal} onClick={closeModal}>
           <div
             className={styles.modalContent}
@@ -124,7 +124,7 @@ export default function GalleryPage() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

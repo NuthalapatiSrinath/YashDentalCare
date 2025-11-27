@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom"; // Added Link for sidebar navigation
+import { useParams, Link } from "react-router-dom";
 import styles from "./BlogDetailsPage.module.css";
 
 const headerBgImage = "/images/Blogbgmain.webp";
@@ -174,22 +174,21 @@ export default function BlogDetailsPage() {
             <h3 className={styles.sidebarTitle}>Recent Blogs</h3>
             <div className={styles.recentPostsList}>
               {recentBlogs.map((blog) => (
-                <div key={blog.id} className={styles.recentPostCard}>
-                  {/* Optional: Wrap in Link if you want clicking the sidebar 
-                      to actually change the page content 
-                   */}
-                  <a
-                    href={`/blog/${blog.id}`}
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    <img
-                      src={blog.image}
-                      alt={blog.title}
-                      className={styles.recentPostImage}
-                    />
-                    <p className={styles.recentPostTitle}>{blog.title}</p>
-                  </a>
-                </div>
+                // UPDATED: Removed div wrapper, applied class directly to anchor tag
+                // This allows 'display: flex' to work on the image and text immediately
+                <a
+                  key={blog.id}
+                  href={`/blogs/${blog.id}`}
+                  className={styles.recentPostCard}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className={styles.recentPostImage}
+                  />
+                  <p className={styles.recentPostTitle}>{blog.title}</p>
+                </a>
               ))}
             </div>
           </div>
