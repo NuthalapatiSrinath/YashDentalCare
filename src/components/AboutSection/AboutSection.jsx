@@ -3,7 +3,7 @@ import styles from "./AboutSection.module.css";
 
 // You can replace this with the actual path to your uploaded image
 // Ensure image_c1ead5.jpg is in public/images/
-const clinicImage = "/images/image_c1ead5.jpg";
+const clinicImage = "/images/Yashcare.webp";
 
 export default function AboutSection({ onReadMore }) {
   return (

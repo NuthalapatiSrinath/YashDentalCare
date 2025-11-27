@@ -8,7 +8,7 @@ const doctors = [
     name: "Dr. Chandana Penmetsa",
     qualification: "BDS, MDS (Pedodontics & Preventive Dentistry)",
     designation: "SR. CONSULTANT – PEDIATRIC DENTISTRY",
-    image: "/images/doctors/chandana.jpg", // Make sure to save crop of left doctor here
+    image: "/images/doctors/chandana.webp", // Make sure to save crop of left doctor here
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const doctors = [
     qualification: "ENT Surgeon",
     designation:
       "Specialist in advanced ENT procedures with extensive experience in ear, nose, and throat surgeries.",
-    image: "/images/doctors/prabhakara.jpg", // Make sure to save crop of right doctor here
+    image: "/images/doctors/Prabhakhar.webp", // Make sure to save crop of right doctor here
   },
 ];
 

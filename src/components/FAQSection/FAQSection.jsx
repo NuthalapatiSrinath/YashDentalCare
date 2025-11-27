@@ -3,7 +3,7 @@ import { Plus } from "lucide-react";
 import styles from "./FAQSection.module.css";
 
 // Use the uploaded image_c179d9.jpg for the left side
-const faqImage = "/images/faq/image_c179d9.jpg";
+const faqImage = "/images/faq/FAQ.webp";
 
 const faqs = [
   {
@@ -53,7 +53,7 @@ const faqs = [
 ];
 
 export default function FAQSection() {
-  const [openId, setOpenId] = useState(2); // Default open item (e.g., index 2)
+  const [openId, setOpenId] = useState(); // Default open item (e.g., index 2)
 
   const toggleFAQ = (id) => {
     setOpenId(openId === id ? null : id);

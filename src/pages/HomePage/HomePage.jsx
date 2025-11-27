@@ -9,8 +9,9 @@ import styles from "./HomePage.module.css";
 
 // Define your hero images here.
 const heroImages = [
-  "/images/hero/image_c25719.jpg",
-  "/images/hero/image_c256f5.jpg",
+  "/images/hero/Hero1.webp",
+  "/images/hero/Hero2.webp",
+  "/images/hero/Hero3.webp",
 ];
 
 export default function HomePage() {
@@ -75,6 +76,7 @@ export default function HomePage() {
 
       {/* Services Section */}
       <ServicesSection />
+      <BookingSection onBookNow={handleBookAppointment} />
 
       {/* FAQ Section */}
       <FAQSection />
@@ -83,7 +85,6 @@ export default function HomePage() {
       <TestimonialsSection />
 
       {/* Booking Banner Section */}
-      <BookingSection onBookNow={handleBookAppointment} />
     </div>
   );
 }

@@ -80,9 +80,9 @@ export default function ServicesSection() {
               <div className={styles.iconWrapper}>{service.icon}</div>
               <h3 className={styles.cardTitle}>{service.title}</h3>
               <p className={styles.cardDescription}>{service.description}</p>
-              <a href={service.link} className={styles.knowMore}>
+              {/* <a href={service.link} className={styles.knowMore}>
                 Know More &rsaquo;
-              </a>
+              </a> */}
             </div>
           ))}
         </div>
