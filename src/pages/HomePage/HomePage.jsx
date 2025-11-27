@@ -41,15 +41,15 @@ export default function HomePage() {
       <section className={styles.heroSection}>
         <div className={styles.heroContent}>
           <div className={styles.textContent}>
-            <h2 className={styles.welcomeText}>Welcome To Yash Denti Care</h2>
+            <h2 className={styles.welcomeText}>Welcome To Ratnam Denti Care</h2>
             <h1 className={styles.mainHeading}>
               Your Gateway to Premier Dental Care in{" "}
               <span className={styles.highlight}>Hyderabad,Gachibowli</span>
             </h1>
             <p className={styles.description}>
-              For the best dental service in Hyderabad, Yash Denti Care is your
-              trusted destination. Our skilled specialists provide exceptional
-              dental care, conveniently located for all your needs.
+              For the best dental service in Hyderabad, Ratnam Denti Care is
+              your trusted destination. Our skilled specialists provide
+              exceptional dental care, conveniently located for all your needs.
             </p>
           </div>
 

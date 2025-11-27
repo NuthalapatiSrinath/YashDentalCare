@@ -58,11 +58,11 @@ export default function TopBar() {
         <div className={styles.topStripContainer}>
           <div className={styles.contactInfo}>
             <a
-              href="mailto:yashdenticare1@gmail.com"
+              href="mailto:ratnamdentalcare1@gmail.com"
               className={styles.contactItem}
             >
               <Mail size={16} />
-              <span>yashdenticare1@gmail.com</span>
+              <span>ratnamdentalcare1@gmail.com</span>
             </a>
             <a href="tel:+919030655888" className={styles.contactItem}>
               <Phone size={16} />

@@ -1,8 +1,6 @@
 import React from "react";
 import { MapPin, Phone, Mail } from "lucide-react";
 import styles from "./Footer.module.css";
-// Ensure you have your logo image saved in public/images or src/assets
-// import logoImg from "../../assets/logo.png";
 
 export default function Footer() {
   return (
@@ -12,28 +10,18 @@ export default function Footer() {
           <div className={styles.grid}>
             {/* Column 1: Brand / About */}
             <div className={styles.column}>
-              {/* Replace src with your actual logo path */}
+              {/* Logo Section - UPDATED TO USE IMAGE */}
               <div className={styles.logoImage}>
-                {/* Simple text fallback for logo visual if image is missing */}
-                <h2
-                  style={{
-                    color: "#000",
-                    margin: 0,
-                    fontSize: "20px",
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <span style={{ color: "#2563eb", fontSize: "24px" }}>
-                    YASH
-                  </span>
-                  <span style={{ marginLeft: "5px" }}>🦷</span>
-                </h2>
+                <img
+                  src="/images/logo.webp"
+                  alt="Ratnam Denti Care"
+                  className={styles.footerLogo}
+                />
               </div>
               <p className={styles.brandDescription}>
-                At Yash Denti Care, we’re dedicated to personalized, gentle
-                dental care for kids, teens, and adults—making every visit
-                comfortable and focused on your smile.
+                At Ratnam Care, we’re dedicated to personalized, gentle dental
+                care for kids, teens, and adults—making every visit comfortable
+                and focused on your smile.
               </p>
             </div>
 
@@ -52,8 +40,13 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className={styles.linkItem}>
-                  <a href="/gallery" className={styles.link}>
-                    Gallery
+                  <a href="/treatments" className={styles.link}>
+                    Treatments
+                  </a>
+                </li>
+                <li className={styles.linkItem}>
+                  <a href="/blogs" className={styles.link}>
+                    Blogs
                   </a>
                 </li>
                 <li className={styles.linkItem}>
@@ -69,25 +62,29 @@ export default function Footer() {
               <h3 className={styles.columnHeading}>Our Treatments</h3>
               <ul className={styles.linkList}>
                 <li className={styles.linkItem}>
-                  <a className={styles.link}>General Dentistry</a>
+                  <a href="/treatments" className={styles.link}>
+                    General Dentistry
+                  </a>
                 </li>
                 <li className={styles.linkItem}>
-                  <a className={styles.link}>Cosmetic Dentistry</a>
+                  <a href="/treatments" className={styles.link}>
+                    Cosmetic Dentistry
+                  </a>
                 </li>
                 <li className={styles.linkItem}>
-                  <a className={styles.link}>Restorative Dentistry</a>
+                  <a href="/treatments" className={styles.link}>
+                    Restorative Dentistry
+                  </a>
                 </li>
                 <li className={styles.linkItem}>
-                  <a className={styles.link}>Orthodontics</a>
+                  <a href="/treatments" className={styles.link}>
+                    Orthodontics
+                  </a>
                 </li>
                 <li className={styles.linkItem}>
-                  <a className={styles.link}>Pediatric Dentistry</a>
-                </li>
-                <li className={styles.linkItem}>
-                  <a className={styles.link}>Periodontics</a>
-                </li>
-                <li className={styles.linkItem}>
-                  <a className={styles.link}>Endodontics</a>
+                  <a href="/treatments" className={styles.link}>
+                    Pediatric Dentistry
+                  </a>
                 </li>
               </ul>
             </div>
@@ -103,10 +100,10 @@ export default function Footer() {
                   </div>
                   <div className={styles.contactText}>
                     <a
-                      href="mailto:yashdenticare1@gmail.com"
+                      href="mailto:ratnamdentalcare1@gmail.com"
                       className={styles.contactLink}
                     >
-                      yashdenticare1@gmail.com
+                      ratnamdentalcare1@gmail.com
                     </a>
                   </div>
                 </div>
@@ -129,7 +126,7 @@ export default function Footer() {
                     <MapPin size={20} color="white" />
                   </div>
                   <div className={styles.contactText}>
-                    Plot No.117, Yash Polyclinics, <br />
+                    Plot No.117, Ratnam Polyclinics, <br />
                     Telecom Nagar, Gachibowli, <br />
                     Hyderabad, Telangana-500032.
                   </div>
@@ -140,7 +137,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className={styles.copyright}>
-            &copy; {new Date().getFullYear()} Yash Denti Care. All Rights
+            &copy; {new Date().getFullYear()} Ratnam Denti Care. All Rights
             Reserved.
           </div>
         </div>
