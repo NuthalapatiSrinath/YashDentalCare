@@ -9,7 +9,7 @@
 .heroSection {
   /* Gentle gradient background similar to the reference image */
   background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%);
-  padding: 80px 24px;
+  padding: 40px 24px;
   min-height: 600px; /* Ensures good height on desktop */
   display: flex;
   align-items: center;

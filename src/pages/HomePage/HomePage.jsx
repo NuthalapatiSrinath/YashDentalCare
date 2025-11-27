@@ -6,6 +6,7 @@ import BookingSection from "../../components/BookingSection/BookingSection";
 import FAQSection from "../../components/FAQSection/FAQSection";
 import TestimonialsSection from "../../components/TestimonialsSection/TestimonialsSection"; // Import Testimonials
 import styles from "./HomePage.module.css";
+import StatsSection from "../../components/StatsSection/StatsSection";
 
 // Define your hero images here.
 const heroImages = [

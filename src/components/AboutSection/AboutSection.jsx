@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./AboutSection.module.css";
+import StatsSection from "../StatsSection/StatsSection";
 
 // You can replace this with the actual path to your uploaded image
 // Ensure image_c1ead5.jpg is in public/images/
@@ -13,7 +14,7 @@ export default function AboutSection({ onReadMore }) {
         <div className={styles.imageWrapper}>
           <img
             src={clinicImage}
-            alt="Yash Denti Care Reception"
+            alt="Ratnam Denti Care Reception"
             className={styles.clinicImage}
           />
 
@@ -29,10 +30,10 @@ export default function AboutSection({ onReadMore }) {
         {/* Right Side: Text Content */}
         <div className={styles.content}>
           <h4 className={styles.subHeading}>ABOUT US</h4>
-          <h2 className={styles.mainHeading}>Yash Denti Care, Gachibowli</h2>
+          <h2 className={styles.mainHeading}>Ratnam Denti Care, Gachibowli</h2>
 
           <p className={styles.description}>
-            At Yash Denti Care, we truly care for your dental health. With 13+
+            At Ratnam Denti Care, we truly care for your dental health. With 13+
             years of experience, we are recognized as one of the best dental
             clinics in Gachibowli, providing world-class treatments with a
             personal touch. Our team of expert dentists in Gachibowli offers
@@ -53,6 +54,7 @@ export default function AboutSection({ onReadMore }) {
           </button>
         </div>
       </div>
+      <StatsSection />
     </section>
   );
 }
