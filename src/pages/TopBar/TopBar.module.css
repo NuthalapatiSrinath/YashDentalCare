@@ -2,7 +2,6 @@
 
 /* Variables applied directly to the main blocks */
 .topStrip {
-  /* Define variables locally or globally */
   --dark-blue: #0f172a;
   --primary-blue: #2563eb;
   --primary-blue-hover: #1d4ed8;
@@ -19,7 +18,6 @@
 }
 
 .header {
-  /* Re-define variables for the header scope */
   --dark-blue: #0f172a;
   --primary-blue: #2563eb;
   --primary-blue-hover: #1d4ed8;
@@ -29,13 +27,21 @@
   font-family: "Poppins", sans-serif;
 
   background-color: #ffffff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+  /* No shadow by default (at top) */
+  box-shadow: none;
+  transition: box-shadow 0.3s ease;
 
   /* STICKY LOGIC */
   position: sticky;
   top: 0;
   z-index: 1000; /* High z-index to stay on top of content */
   width: 100%;
+}
+
+/* Shadow state for scrolling */
+.headerScrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .topStripContainer {
@@ -84,7 +90,7 @@
 .headerContainer {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 16px 24px;
+  /* padding: 16px 24px; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,6 +103,14 @@
   gap: 5px;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* UPDATED: Increased height for bigger logo */
+.mainLogo {
+  height: 90px; /* Make logo much larger */
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .logoYash {
@@ -196,6 +210,11 @@
 
   .headerContainer {
     padding: 16px;
+  }
+
+  /* UPDATED: Increased mobile logo size too */
+  .mainLogo {
+    height: 70px;
   }
 
   .navMenu {

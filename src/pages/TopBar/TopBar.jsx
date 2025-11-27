@@ -94,18 +94,16 @@ export default function TopBar() {
         }`}
       >
         <div className={styles.headerContainer}>
-          {/* Logo Section */}
+          {/* Logo Section - UPDATED TO USE IMAGE */}
           <div
             className={styles.logoSection}
             onClick={() => handleNavigation("/")}
           >
-            <span className={styles.logoYash}>YASH</span>
-            <div className={styles.logoGroup}>
-              <span className={styles.logoDenti}>
-                <span className={styles.logoIcon}>🦷</span>enti
-              </span>
-              <span className={styles.logoCare}>care</span>
-            </div>
+            <img
+              src="/images/logo.webp"
+              alt="Yash Denti Care Logo"
+              className={styles.mainLogo}
+            />
           </div>
 
           {/* Navigation */}
@@ -128,12 +126,6 @@ export default function TopBar() {
             >
               Treatments
             </button>
-            {/* <button
-              onClick={() => handleNavigation("/gallery")}
-              className={styles.navLink}
-            >
-              Gallery
-            </button> */}
 
             <button
               onClick={() => handleNavigation("/blogs")}

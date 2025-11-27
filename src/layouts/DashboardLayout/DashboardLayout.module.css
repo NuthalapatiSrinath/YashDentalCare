@@ -1,9 +1,9 @@
 .DashboardLayout {
   position: relative;
   display: flex;
-  width: 100%; /* Changed from 100vw to 100% to prevent horizontal scrollbar */
+  width: 100%;
   min-height: 100vh;
-  overflow-x: hidden; /* Ensure no horizontal overflow */
+  /* overflow-x: hidden;  <--- REMOVED: This was breaking the sticky header */
 }
 
 .LeftSection {

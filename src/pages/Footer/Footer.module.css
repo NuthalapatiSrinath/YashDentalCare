@@ -8,14 +8,19 @@
   --accent-blue: #2563eb; /* For icon backgrounds */
   --hover-blue: #60a5fa;
   font-family: "Poppins", sans-serif;
-  width: 100%; /* Ensure full width */
+
+  width: 100%;
+  overflow-x: hidden; /* FIX: Prevents any horizontal scroll caused by this component */
 }
 
 .footer {
   background-color: var(--bg-dark);
   color: var(--text-white);
   padding: 64px 24px 24px;
+
+  /* FIX: Ensure padding is included in width calculation */
   width: 100%;
+  box-sizing: border-box;
 }
 
 .container {
