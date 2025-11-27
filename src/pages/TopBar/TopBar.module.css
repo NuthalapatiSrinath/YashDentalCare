@@ -1,0 +1,243 @@
+/* TopBar.module.css */
+
+/* Variables applied directly to the main blocks */
+.topStrip {
+  /* Define variables locally or globally */
+  --dark-blue: #0f172a;
+  --primary-blue: #2563eb;
+  --primary-blue-hover: #1d4ed8;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --white: #ffffff;
+  font-family: "Poppins", sans-serif;
+
+  background-color: var(--dark-blue);
+  color: #ffffff;
+  padding: 8px 0;
+  font-size: 14px;
+  width: 100%;
+}
+
+.header {
+  /* Re-define variables for the header scope */
+  --dark-blue: #0f172a;
+  --primary-blue: #2563eb;
+  --primary-blue-hover: #1d4ed8;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --white: #ffffff;
+  font-family: "Poppins", sans-serif;
+
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+
+  /* STICKY LOGIC */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* High z-index to stay on top of content */
+  width: 100%;
+}
+
+.topStripContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactInfo {
+  display: flex;
+  gap: 24px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.contactItem:hover {
+  opacity: 0.8;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 16px;
+}
+
+.socialIcons a {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+
+.socialIcons a:hover {
+  opacity: 0.8;
+}
+
+.headerContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo Styling --- */
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logoYash {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1e3a8a;
+  letter-spacing: 1px;
+}
+
+.logoGroup {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoDenti {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0ea5e9;
+  display: flex;
+  align-items: center;
+}
+
+.logoIcon {
+  font-size: 24px;
+  margin-right: 2px;
+}
+
+.logoCare {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #64748b;
+  margin-left: 4px;
+}
+
+/* --- Navigation --- */
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.navLink:hover {
+  color: #2563eb;
+}
+
+/* --- Book Button --- */
+.btnBook {
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.2s;
+}
+
+.btnBook:hover {
+  background-color: #1d4ed8;
+}
+
+/* --- Mobile Styles --- */
+.mobileToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .topStripContainer {
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px 16px;
+  }
+
+  .contactInfo {
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .headerContainer {
+    padding: 16px;
+  }
+
+  .navMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #e2e8f0;
+  }
+
+  /* Class for when menu is open */
+  .navMenuOpen {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .navLink {
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .btnBook {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .mobileToggle {
+    display: block;
+  }
+}

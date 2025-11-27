@@ -1,19 +1,25 @@
 import TopBar from "../../pages/TopBar/TopBar";
+import Footer from "../../pages/Footer/Footer";
+import FloatingActions from "../../components/FloatingActions/FloatingActions"; // Import the new component
 import styles from "./DashboardLayout.module.css";
 
-// import SideBar from "../../sections/SideBar/SideBar";
-import { Outlet } from "react-router";
-// import WhatsAppFloatingButton from "../WhatsAppFloatingButton/WhatsAppFloatingButton";
+import { Outlet } from "react-router-dom";
 
 function DashboardLayout() {
   return (
     <div className={styles.DashboardLayout}>
       <div className={styles.RightSection}>
+        {/* <div className={styles.RightSection}></div> */}
         <TopBar />
+
         <main className="Main">
           <Outlet />
-          {/* <WhatsAppFloatingButton /> */}
         </main>
+
+        <Footer />
+
+        {/* Floating Buttons (WhatsApp + ScrollTop) */}
+        <FloatingActions />
       </div>
     </div>
   );

@@ -1,0 +1,68 @@
+/* BookingSection.module.css */
+
+.section {
+  /* Dark navy blue background similar to the image */
+  background-color: #0f172a;
+  padding: 80px 24px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.subHeading {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.mainHeading {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+.bookBtn {
+  background-color: #3b82f6; /* Bright Blue button */
+  color: white;
+  padding: 16px 40px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.bookBtn:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 20px;
+  }
+
+  .mainHeading {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .subHeading {
+    font-size: 16px;
+  }
+}

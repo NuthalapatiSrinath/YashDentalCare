@@ -1,0 +1,164 @@
+/* Footer.module.css */
+
+/* Variables matching the image theme */
+.footerWrapper {
+  --bg-dark: #000d26; /* Deep Navy Blue */
+  --text-white: #ffffff;
+  --text-gray: #b0b8c4;
+  --accent-blue: #2563eb; /* For icon backgrounds */
+  --hover-blue: #60a5fa;
+  font-family: "Poppins", sans-serif;
+  width: 100%; /* Ensure full width */
+}
+
+.footer {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  padding: 64px 24px 24px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* --- Grid Layout --- */
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr 1.2fr; /* Adjusted widths for content fit */
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+/* --- Column Styles --- */
+.columnHeading {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-white);
+}
+
+/* --- Column 1: Brand --- */
+.logoImage {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 20px;
+  max-width: 180px;
+}
+
+/* Fallback logo text if image fails */
+.logoText {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1e3a8a;
+}
+
+.brandDescription {
+  color: var(--text-gray);
+  line-height: 1.6;
+  font-size: 14px;
+  max-width: 300px;
+}
+
+/* --- Lists (Quick Links & Treatments) --- */
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linkItem {
+  margin-bottom: 12px;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-gray);
+  font-size: 15px;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link::before {
+  content: "+";
+  color: var(--accent-blue);
+  font-weight: bold;
+}
+
+.link:hover {
+  color: var(--text-white);
+  padding-left: 4px; /* Subtle slide effect */
+}
+
+/* --- Contact Info --- */
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.iconWrapper {
+  background-color: var(--accent-blue);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contactText {
+  color: var(--text-gray);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 2px; /* Alignment fix */
+}
+
+.contactLink {
+  color: var(--text-gray);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.contactLink:hover {
+  color: var(--text-white);
+}
+
+/* --- Copyright --- */
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+  text-align: center;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr; /* 2x2 grid on tablets */
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 40px;
+  }
+
+  .logoImage {
+    max-width: 150px;
+  }
+}

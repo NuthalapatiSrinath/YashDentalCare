@@ -1,0 +1,125 @@
+/* HomePage.module.css */
+
+.homePage {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Hero Section Container */
+.heroSection {
+  /* Gentle gradient background similar to the reference image */
+  background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%);
+  padding: 80px 24px;
+  min-height: 600px; /* Ensures good height on desktop */
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Split 50/50 */
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+
+/* --- Left Side: Text Styling --- */
+.textContent {
+  max-width: 600px;
+  z-index: 2; /* Ensure text sits above any background elements */
+}
+
+.welcomeText {
+  color: #2563eb; /* The blue accent color */
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.mainHeading {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1e3a8a; /* Deep navy blue for main text */
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.highlight {
+  color: #2563eb; /* Highlight 'Hyderabad, Gachibowli' in blue */
+}
+
+.description {
+  font-size: 16px;
+  color: #64748b; /* Muted gray for paragraph text */
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* --- Right Side: Image Slider Styling --- */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Fixed height for the image box */
+  overflow: hidden;
+  /* Optional shadow for depth */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.heroImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 1s ease-in-out, transform 6s ease; /* Smooth fade & slow zoom */
+  transform: scale(1.05); /* Start slightly zoomed in */
+}
+
+/* The 'active' class makes the current image visible */
+.heroImage.active {
+  opacity: 1;
+  transform: scale(1); /* Zoom out effect on active */
+  z-index: 1;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .heroContent {
+    grid-template-columns: 1fr; /* Stack vertically on smaller screens */
+    text-align: center;
+    gap: 40px;
+  }
+
+  .textContent {
+    margin: 0 auto;
+  }
+
+  .mainHeading {
+    font-size: 36px;
+  }
+
+  .imageContainer {
+    height: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroSection {
+    padding: 40px 16px;
+  }
+
+  .mainHeading {
+    font-size: 28px;
+  }
+
+  .imageContainer {
+    height: 300px;
+  }
+}

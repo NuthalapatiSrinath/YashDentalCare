@@ -1,0 +1,139 @@
+/* BlogsPage.module.css */
+
+.pageWrapper {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: #f8fafc; /* Light gray background for the content area */
+}
+
+/* --- Hero Banner --- */
+.pageHeader {
+  position: relative;
+  height: 300px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align left based on image, or center if preferred */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 0 5%; /* Horizontal padding */
+}
+
+/* Dark Blue Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.6); /* Dark blue transparency */
+  z-index: 1;
+}
+
+.headerContent {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.pageTitle {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.breadcrumb {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.breadcrumbLink {
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumbLink:hover {
+  color: #60a5fa; /* Lighter blue on hover */
+}
+
+.separator {
+  margin: 0 8px;
+  color: #94a3b8;
+}
+
+/* --- Blog Content Area --- */
+.blogContent {
+  max-width: 1280px;
+  margin: 60px auto;
+  padding: 0 24px;
+  min-height: 400px; /* Placeholder height */
+}
+
+/* Simple grid for blog posts */
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.blogCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.blogCard:hover {
+  transform: translateY(-4px);
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: #e2e8f0;
+}
+
+.cardBody {
+  padding: 24px;
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.cardExcerpt {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.readMore {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 36px;
+  }
+
+  .pageHeader {
+    height: 250px;
+  }
+}

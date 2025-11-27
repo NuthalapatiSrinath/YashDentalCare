@@ -1,0 +1,104 @@
+/* DoctorsSection.module.css */
+
+.section {
+  padding: 80px 24px;
+  background-color: #fcfbff; /* Light background matching theme */
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.subHeading {
+  color: #2563eb; /* Brand Blue */
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.mainHeading {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1e3a8a; /* Navy Blue */
+  margin-bottom: 48px;
+}
+
+/* --- Doctors Grid --- */
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* --- Doctor Card --- */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 350px; /* Fixed height for consistency */
+  overflow: hidden;
+  border-radius: 12px;
+  border: 4px solid #0ea5e9; /* Light Blue border */
+  margin-bottom: 24px;
+}
+
+.doctorImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1e3a8a; /* Navy Blue */
+  margin-bottom: 8px;
+}
+
+.qualification {
+  font-size: 14px;
+  color: #64748b; /* Gray Text */
+  margin-bottom: 8px;
+}
+
+.designation {
+  font-size: 14px;
+  font-weight: 600;
+  color: #64748b; /* Gray Text */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mainHeading {
+    font-size: 28px;
+  }
+}

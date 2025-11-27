@@ -1,0 +1,128 @@
+/* ServicesSection.module.css */
+
+.section {
+  padding: 80px 24px;
+  background-color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* --- Headings --- */
+.subHeading {
+  color: #2563eb; /* Brand Blue */
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.mainHeading {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1e3a8a; /* Navy Blue */
+  margin-bottom: 48px;
+}
+
+/* --- Grid Layout --- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+/* --- Service Card --- */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  border-color: #e0e7ff;
+}
+
+/* Icon Placeholder styling (Use Lucide or SVGs) */
+.iconWrapper {
+  margin-bottom: 24px;
+  color: #2563eb;
+  /* You can add a light blue circle background here if desired, 
+     but the image shows just the icon. */
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1; /* Pushes link to bottom */
+}
+
+.knowMore {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s ease;
+}
+
+.knowMore:hover {
+  gap: 8px;
+}
+
+/* --- More Treatments Button --- */
+.moreBtn {
+  background-color: #2563eb;
+  color: white;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 20px;
+}
+
+.moreBtn:hover {
+  background-color: #1d4ed8;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .mainHeading {
+    font-size: 28px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
