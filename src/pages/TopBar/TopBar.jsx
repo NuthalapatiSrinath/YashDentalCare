@@ -126,6 +126,12 @@ export default function TopBar() {
             >
               Treatments
             </button>
+            <button
+              onClick={() => handleNavigation("/gallery")}
+              className={styles.navLink}
+            >
+              Gallery
+            </button>
 
             <button
               onClick={() => handleNavigation("/blogs")}

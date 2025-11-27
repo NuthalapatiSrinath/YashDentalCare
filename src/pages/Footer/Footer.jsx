@@ -10,7 +10,6 @@ export default function Footer() {
           <div className={styles.grid}>
             {/* Column 1: Brand / About */}
             <div className={styles.column}>
-              {/* Logo Section - UPDATED TO USE IMAGE */}
               <div className={styles.logoImage}>
                 <img
                   src="/images/logo.webp"
@@ -135,10 +134,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Copyright */}
+          {/* Copyright Section - Centered */}
           <div className={styles.copyright}>
-            &copy; {new Date().getFullYear()} Ratnam Denti Care. All Rights
-            Reserved.
+            Copyright © 2024 Ratnam Denti Care. All rights reserved. Designed &
+            Developed By Panacea IT Services – +91 8686818384
           </div>
         </div>
       </footer>
