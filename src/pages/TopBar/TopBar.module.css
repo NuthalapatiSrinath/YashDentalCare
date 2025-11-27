@@ -209,7 +209,8 @@
   }
 
   .headerContainer {
-    padding: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   /* UPDATED: Increased mobile logo size too */
@@ -254,6 +255,13 @@
   .btnBook {
     width: 100%;
     margin-top: 10px;
+
+    /* FIX: Ensure padding doesn't cause overflow on small screens */
+    box-sizing: border-box;
+    white-space: normal; /* Allow text wrapping if needed */
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .mobileToggle {
