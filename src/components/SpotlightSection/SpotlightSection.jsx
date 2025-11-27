@@ -2,39 +2,50 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SpotlightSection.module.css";
 
-// Default data (used if no props provided)
+// Default data - Updated with your 6 Blog images
 const defaultCards = [
   {
     id: 1,
     title:
       "Gachibowli Pediatric Dentist Caring for Baby Teeth & Childhood Dental Health",
-    image: "/images/spotlight/image_c11042.jpg",
+    image: "/images/blog/Blog1.webp",
   },
   {
     id: 2,
     title: "Children’s Dental Care in Gachibowli Keeping Baby Teeth Healthy",
-    image: "/images/spotlight/image_c10d76.jpg",
+    image: "/images/blog/Blog2.webp",
   },
   {
     id: 3,
     title: "Best Pediatric Dentist in Gachibowli Expert Dental Care for Kids",
-    image: "/images/spotlight/image_c11042.jpg",
+    image: "/images/blog/Blog3.webp",
   },
   {
     id: 4,
     title:
       "Top 5 Tips for Preparing Your Child for Their First Dental Appointment",
-    image: "/images/spotlight/image_c10d76.jpg",
+    image: "/images/blog/Blog4.webp",
+  },
+  {
+    id: 5,
+    title: "Preventive Dental Care: Why It Matters for Your Child",
+    image: "/images/blog/Blog5.webp",
+  },
+  {
+    id: 6,
+    title: "Common Dental Issues in Kids and How to Treat Them",
+    image: "/images/blog/Blog6.webp",
   },
 ];
 
 // Helper to generate array if needed, otherwise use passed array
 const getCards = (cards) => {
   if (cards && cards.length > 0) return cards;
-  // If no cards passed, generate 24 from default for the Blogs page look
+
+  // If no cards passed, generate 24 items by cycling through the 6 default cards
   return Array.from({ length: 24 }, (_, i) => ({
     ...defaultCards[i % defaultCards.length],
-    id: i + 1,
+    id: i + 1, // Unique ID for key prop
   }));
 };
 
@@ -51,7 +62,11 @@ export default function SpotlightSection({
     if (onCardClick) {
       onCardClick(id);
     } else {
-      navigate(`/blogs/${id}`);
+      // Logic to handle navigation:
+      // Since we generate 24 cards but only have 6 unique blog contents,
+      // we map the clicked ID back to the original 1-6 range.
+      const originalId = ((id - 1) % defaultCards.length) + 1;
+      navigate(`/blogs/${originalId}`);
     }
   };
 

@@ -69,39 +69,25 @@ export default function Footer() {
               <h3 className={styles.columnHeading}>Our Treatments</h3>
               <ul className={styles.linkList}>
                 <li className={styles.linkItem}>
-                  <a href="/treatments/general" className={styles.link}>
-                    General Dentistry
-                  </a>
+                  <a className={styles.link}>General Dentistry</a>
                 </li>
                 <li className={styles.linkItem}>
-                  <a href="/treatments/cosmetic" className={styles.link}>
-                    Cosmetic Dentistry
-                  </a>
+                  <a className={styles.link}>Cosmetic Dentistry</a>
                 </li>
                 <li className={styles.linkItem}>
-                  <a href="/treatments/restorative" className={styles.link}>
-                    Restorative Dentistry
-                  </a>
+                  <a className={styles.link}>Restorative Dentistry</a>
                 </li>
                 <li className={styles.linkItem}>
-                  <a href="/treatments/orthodontics" className={styles.link}>
-                    Orthodontics
-                  </a>
+                  <a className={styles.link}>Orthodontics</a>
                 </li>
                 <li className={styles.linkItem}>
-                  <a href="/treatments/pediatric" className={styles.link}>
-                    Pediatric Dentistry
-                  </a>
+                  <a className={styles.link}>Pediatric Dentistry</a>
                 </li>
                 <li className={styles.linkItem}>
-                  <a href="/treatments/periodontics" className={styles.link}>
-                    Periodontics
-                  </a>
+                  <a className={styles.link}>Periodontics</a>
                 </li>
                 <li className={styles.linkItem}>
-                  <a href="/treatments/endodontics" className={styles.link}>
-                    Endodontics
-                  </a>
+                  <a className={styles.link}>Endodontics</a>
                 </li>
               </ul>
             </div>

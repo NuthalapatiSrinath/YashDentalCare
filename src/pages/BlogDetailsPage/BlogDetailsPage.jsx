@@ -1,66 +1,59 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom"; // Added Link for sidebar navigation
 import styles from "./BlogDetailsPage.module.css";
 
-const headerBgImage = "/images/headers/blogs-bg.jpg";
-const mainImage = "/images/blogs/child-dentist-main.jpg";
+const headerBgImage = "/images/Blogbgmain.webp";
 
-// Blog Data Lookup (To change title dynamically)
+// updated data with 6 entries for the 6 images
 const blogData = [
   {
     id: 1,
     title:
       "Gachibowli Pediatric Dentist Caring for Baby Teeth & Childhood Dental Health",
+    image: "/images/blog/Blog1.webp",
   },
   {
     id: 2,
     title: "Children’s Dental Care in Gachibowli Keeping Baby Teeth Healthy",
+    image: "/images/blog/Blog2.webp",
   },
   {
     id: 3,
     title: "Best Pediatric Dentist in Gachibowli Expert Dental Care for Kids",
+    image: "/images/blog/Blog3.webp",
   },
   {
     id: 4,
     title:
       "Top 5 Tips for Preparing Your Child for Their First Dental Appointment",
+    image: "/images/blog/Blog4.webp",
+  },
+  {
+    id: 5,
+    title: "Preventive Dental Care: Why It Matters for Your Child",
+    image: "/images/blog/Blog5.webp",
+  },
+  {
+    id: 6,
+    title: "Common Dental Issues in Kids and How to Treat Them",
+    image: "/images/blog/Blog6.webp",
   },
 ];
 
-// Sidebar Data
-const recentBlogs = [
-  {
-    id: 1,
-    title: "Gachibowli Pediatric Dentist Caring for Baby Teeth",
-    image: "/images/spotlight/image_c11042.jpg",
-  },
-  {
-    id: 2,
-    title: "Children’s Dental Care in Gachibowli Keeping Baby Teeth Healthy",
-    image: "/images/spotlight/image_c10d76.jpg",
-  },
-  {
-    id: 3,
-    title: "Best Pediatric Dentist in Gachibowli Expert Dental Care",
-    image: "/images/spotlight/image_c11042.jpg",
-  },
-  {
-    id: 4,
-    title: "Gachibowli Pediatric Dental Care: Nurturing Bright Smiles",
-    image: "/images/spotlight/image_c10d76.jpg",
-  },
-];
+// Sidebar Data - using the same 6 images
+const recentBlogs = blogData;
 
 export default function BlogDetailsPage() {
   const { id } = useParams();
 
   // Find the blog matching the ID from the URL
-  const currentBlog = blogData.find((b) => b.id === parseInt(id));
+  // If no ID is found (e.g. just /blogs), default to the first one
+  const currentBlog =
+    blogData.find((b) => b.id === parseInt(id)) || blogData[0];
 
-  // Use dynamic title if found, otherwise default
-  const pageTitle = currentBlog
-    ? currentBlog.title
-    : "Children’s Dentist in Gachibowli, Hyderabad: Gentle Care for Growing Smiles";
+  const pageTitle = currentBlog.title;
+  // Use the specific image for this blog
+  const mainImage = currentBlog.image;
 
   return (
     <div className={styles.pageWrapper}>
@@ -94,11 +87,8 @@ export default function BlogDetailsPage() {
             {/* Dynamic Title */}
             <h1 className={styles.articleTitle}>{pageTitle}</h1>
 
-            <img
-              src={mainImage}
-              alt="Dental Care"
-              className={styles.mainImage}
-            />
+            {/* Dynamic Main Image based on the specific blog */}
+            <img src={mainImage} alt={pageTitle} className={styles.mainImage} />
 
             {/* Static Content (Same for all) */}
             <div className={styles.articleText}>
@@ -185,12 +175,20 @@ export default function BlogDetailsPage() {
             <div className={styles.recentPostsList}>
               {recentBlogs.map((blog) => (
                 <div key={blog.id} className={styles.recentPostCard}>
-                  <img
-                    src={blog.image}
-                    alt={blog.title}
-                    className={styles.recentPostImage}
-                  />
-                  <p className={styles.recentPostTitle}>{blog.title}</p>
+                  {/* Optional: Wrap in Link if you want clicking the sidebar 
+                      to actually change the page content 
+                   */}
+                  <a
+                    href={`/blog/${blog.id}`}
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
+                      className={styles.recentPostImage}
+                    />
+                    <p className={styles.recentPostTitle}>{blog.title}</p>
+                  </a>
                 </div>
               ))}
             </div>

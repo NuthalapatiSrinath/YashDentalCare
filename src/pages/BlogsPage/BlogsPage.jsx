@@ -2,7 +2,7 @@ import React from "react";
 import SpotlightSection from "../../components/SpotlightSection/SpotlightSection";
 import styles from "./BlogsPage.module.css";
 
-const headerBgImage = "/images/headers/blogs-bg.jpg";
+const headerBgImage = "/images/Blogbgmain.webp";
 
 export default function BlogsPage() {
   return (
