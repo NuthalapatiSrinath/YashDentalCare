@@ -7,7 +7,8 @@
 }
 
 .container {
-  max-width: 1280px;
+  /* Reduced max-width to make the cards narrower */
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -18,12 +19,12 @@
 }
 
 .subHeading {
-  color: #2563eb;
-  font-size: 14px;
-  font-weight: 700;
+  color: #375087;
+  font-size: 44px;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
   display: block;
 }
 
@@ -33,69 +34,84 @@
   color: #1e3a8a;
 }
 
-/* --- Grid Layout --- */
+/* --- Grid Layout (3 Columns) --- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  justify-content: center;
 }
 
-/* --- Gallery Item --- */
+/* --- Gallery Item (Tall Card) --- */
 .item {
-  border-radius: 12px;
-  overflow: hidden;
   position: relative;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  height: 250px; /* Fixed height for uniform look */
-  cursor: pointer;
+  overflow: hidden;
+
+  /* Height */
+  height: 400px;
+
+  /* Border removed here, moving it to ::after for the "inside" look */
+  /* border: 2px solid #d4a017; */
+
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* cursor: pointer; */
 }
 
-.item:hover {
-  transform: scale(1.02);
+/* --- The "Inside" Border Frame --- */
+.item::after {
+  content: "";
+  position: absolute;
+  /* Adjust these values to move the border further inside or outside */
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+
+  /* The Gold Border */
+  border: 2px solid #d4a017;
+
+  /* Ensure clicks pass through the border to the card */
+  pointer-events: none;
+  z-index: 10;
 }
+
+/* .item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+} */
 
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: filter 0.3s ease;
+  transition: transform 0.5s ease;
 }
-
+/* 
 .item:hover .image {
-  filter: brightness(0.9);
-}
-
-/* Optional Overlay Text on Hover */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.item:hover .overlay {
-  opacity: 1;
-}
-
-.caption {
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
-}
+  transform: scale(1.05);
+} */
 
 /* --- Responsive --- */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+}
+
+@media (max-width: 640px) {
   .mainHeading {
     font-size: 28px;
   }
 
   .grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 20px;
+  }
+
+  .item {
+    height: 400px; /* Slightly shorter on mobile */
   }
 }
