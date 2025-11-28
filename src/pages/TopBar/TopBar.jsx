@@ -62,7 +62,7 @@ export default function TopBar() {
               className={styles.contactItem}
             >
               <Mail size={16} />
-              <span>ratnamdentalcare1@gmail.com</span>
+              <span>ratnamdentalcare@gmail.com</span>
             </a>
             <a href="tel:+919030655888" className={styles.contactItem}>
               <Phone size={16} />

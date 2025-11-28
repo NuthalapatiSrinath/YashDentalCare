@@ -1,5 +1,3 @@
-/* DoctorsSection.module.css */
-
 .section {
   padding: 80px 24px;
   background-color: #fcfbff; /* Light background matching theme */
@@ -91,14 +89,38 @@
   letter-spacing: 0.5px;
 }
 
-/* --- Responsive --- */
+/* --- Mobile Version Changes Only --- */
 @media (max-width: 768px) {
-  .grid {
-    flex-direction: column;
-    align-items: center;
+  .section {
+    padding: 50px 16px; /* Reduced padding from 80px */
   }
 
   .mainHeading {
     font-size: 28px;
+    margin-bottom: 30px; /* Reduced margin to save vertical space */
+  }
+
+  .grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px; /* Reduced gap between cards */
+  }
+
+  .card {
+    max-width: 100%; /* Ensure card uses full width on mobile */
+    padding: 20px; /* Slightly reduced padding inside card */
+  }
+
+  .imageWrapper {
+    height: 300px; /* Slightly shorter image for mobile screens */
+    margin-bottom: 20px;
+  }
+
+  .name {
+    font-size: 18px; /* Adjusted size for mobile */
+  }
+
+  .designation {
+    font-size: 13px; /* Prevent text wrapping awkwardly */
   }
 }

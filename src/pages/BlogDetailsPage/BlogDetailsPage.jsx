@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styles from "./BlogDetailsPage.module.css";
 
 const headerBgImage = "/images/Blogbgmain.webp";

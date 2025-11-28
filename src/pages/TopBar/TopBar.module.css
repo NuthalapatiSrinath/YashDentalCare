@@ -200,17 +200,17 @@
   .topStripContainer {
     flex-direction: column;
     gap: 10px;
-    padding: 8px 16px;
+    padding: 0px 0px;
   }
 
   .contactInfo {
-    gap: 16px;
+    gap: 6px;
     font-size: 13px;
   }
 
   .headerContainer {
     padding-left: 8px;
-    padding-right: 8px;
+    padding-right: 16px;
   }
 
   /* UPDATED: Increased mobile logo size too */
