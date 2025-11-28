@@ -5,12 +5,15 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Hero Section Container */
+/* Hero Section */
 .heroSection {
-  /* Gentle gradient background similar to the reference image */
-  background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%);
-  padding: 40px 24px;
-  min-height: 600px; /* Ensures good height on desktop */
+  background: linear-gradient(
+    135deg,
+    #eef2ff 0%,
+    #ffffff 100%
+  ); /* Light blue to white gradient */
+  padding: 80px 24px;
+  min-height: 600px;
   display: flex;
   align-items: center;
   position: relative;
@@ -21,20 +24,20 @@
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Split 50/50 */
+  grid-template-columns: 1fr 1fr;
   gap: 60px;
   align-items: center;
   width: 100%;
 }
 
-/* --- Left Side: Text Styling --- */
+/* Text Content */
 .textContent {
   max-width: 600px;
-  z-index: 2; /* Ensure text sits above any background elements */
+  z-index: 2;
 }
 
 .welcomeText {
-  color: #2563eb; /* The blue accent color */
+  color: #2563eb; /* Brand Blue */
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 16px;
@@ -44,29 +47,49 @@
 .mainHeading {
   font-size: 48px;
   font-weight: 800;
-  color: #1e3a8a; /* Deep navy blue for main text */
+  color: #1e3a8a; /* Dark Navy Blue */
   line-height: 1.2;
   margin-bottom: 24px;
 }
 
 .highlight {
-  color: #2563eb; /* Highlight 'Hyderabad, Gachibowli' in blue */
+  color: #2563eb;
 }
 
 .description {
   font-size: 16px;
-  color: #64748b; /* Muted gray for paragraph text */
+  color: #64748b; /* Text Gray */
   line-height: 1.6;
   margin-bottom: 32px;
 }
 
-/* --- Right Side: Image Slider Styling --- */
+/* WhatsApp Button in Hero */
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25d366;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.whatsappBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+/* Image Slider */
 .imageContainer {
   position: relative;
   width: 100%;
-  height: 500px; /* Fixed height for the image box */
+  height: 500px; /* Adjust height based on design */
+  border-radius: 20px;
   overflow: hidden;
-  /* Optional shadow for depth */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
@@ -76,23 +99,22 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures image covers the area without distortion */
-  opacity: 0; /* Hidden by default */
-  transition: opacity 1s ease-in-out, transform 6s ease; /* Smooth fade & slow zoom */
-  transform: scale(1.05); /* Start slightly zoomed in */
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 6s ease; /* Fade + Slight Zoom effect */
+  transform: scale(1.05);
 }
 
-/* The 'active' class makes the current image visible */
 .heroImage.active {
   opacity: 1;
   transform: scale(1); /* Zoom out effect on active */
   z-index: 1;
 }
 
-/* --- Responsive Adjustments --- */
+/* Responsive */
 @media (max-width: 1024px) {
   .heroContent {
-    grid-template-columns: 1fr; /* Stack vertically on smaller screens */
+    grid-template-columns: 1fr; /* Stack on smaller screens */
     text-align: center;
     gap: 40px;
   }

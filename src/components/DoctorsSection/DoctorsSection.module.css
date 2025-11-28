@@ -1,13 +1,23 @@
+/* DoctorsSection.module.css */
+
+/* 1. SAFETY RESET: Prevents padding from causing scroll */
+* {
+  box-sizing: border-box;
+}
+
 .section {
   padding: 80px 24px;
   background-color: #fcfbff; /* Light background matching theme */
   font-family: "Poppins", sans-serif;
   text-align: center;
+  width: 100%;
+  overflow-x: hidden; /* Force stops any horizontal scrolling */
 }
 
 .container {
   max-width: 1280px;
   margin: 0 auto;
+  width: 100%; /* Ensure container fits within parent */
 }
 
 .subHeading {
@@ -33,6 +43,7 @@
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 /* --- Doctor Card --- */
@@ -45,6 +56,9 @@
   width: 100%;
   border: 1px solid #eee;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content inside card */
 }
 
 .card:hover {
@@ -87,40 +101,45 @@
   color: #64748b; /* Gray Text */
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  line-height: 1.5; /* Better readability for long designations */
 }
 
-/* --- Mobile Version Changes Only --- */
+/* --- Mobile Version (Optimized) --- */
 @media (max-width: 768px) {
   .section {
-    padding: 50px 16px; /* Reduced padding from 80px */
+    padding: 50px 0px; /* Adjusted padding */
   }
 
   .mainHeading {
     font-size: 28px;
-    margin-bottom: 30px; /* Reduced margin to save vertical space */
+    margin-bottom: 30px;
+    line-height: 1.2;
   }
 
   .grid {
     flex-direction: column;
     align-items: center;
-    gap: 24px; /* Reduced gap between cards */
+    gap: 30px; /* Increased gap slightly for breathing room */
   }
 
   .card {
-    max-width: 100%; /* Ensure card uses full width on mobile */
-    padding: 20px; /* Slightly reduced padding inside card */
+    max-width: 80%; /* Allow full width */
+    padding: 20px;
+    /* Ensure card doesn't touch edges if screen is very narrow */
+    margin: 0 auto;
   }
 
   .imageWrapper {
-    height: 300px; /* Slightly shorter image for mobile screens */
+    height: 300px; /* Slightly shorter image for mobile */
     margin-bottom: 20px;
   }
 
   .name {
-    font-size: 18px; /* Adjusted size for mobile */
+    font-size: 20px; /* Keep name readable */
   }
 
   .designation {
-    font-size: 13px; /* Prevent text wrapping awkwardly */
+    font-size: 13px;
+    padding: 0 10px; /* Prevents text hitting edges inside card */
   }
 }

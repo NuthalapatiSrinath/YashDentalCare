@@ -1,12 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
+/* 1. GLOBAL RESET */
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --accent: #3f66d1;
   --accent-dark: #3558b0;
   --muted: #6b7280;
   --page-bg: #ffffff;
   --panel-bg: #faf9fe;
-  --max-width: 1200px;
+  /* --max-width: 1200px; */
   --spacing: 24px;
 }
 
@@ -16,38 +21,31 @@
     "Helvetica Neue", Arial;
   color: #111827;
   background: var(--page-bg);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 /* HERO */
 .hero {
   position: relative;
   height: 260px;
+  width: 100%;
   overflow: hidden;
-  border-bottom: 6px solid rgba(53, 88, 176, 0.06);
+  border: none; /* Explicitly removed border here */
 }
 .heroImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  /* filter: brightness(0.62) saturate(0.9); */
 }
-/* .heroOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(63, 102, 209, 0.28) 0%,
-    rgba(63, 102, 209, 0.1) 60%
-  );
-  pointer-events: none;
-} */
 .heroContent {
   position: absolute;
   left: 80px;
   top: 60px;
   color: #fff;
   max-width: 640px;
+  z-index: 2;
 }
 .heroTitle {
   margin: 0 0 12px 0;
@@ -79,12 +77,14 @@
   opacity: 0.95;
 }
 
-/* Center heading */
+/* Page Title */
 .pageTitleWrap {
   display: flex;
   justify-content: center;
   margin-top: 36px;
   margin-bottom: 30px;
+  padding: 0 16px;
+  text-align: center;
 }
 .pageTitle {
   font-size: 56px;
@@ -99,15 +99,16 @@
   max-width: var(--max-width);
   margin: 0 auto 80px;
   padding: 0 var(--spacing);
-  box-sizing: border-box;
+  width: 100%;
 }
 .treatmentsWrap {
   display: block;
 }
 
-/* Treatment item */
+/* Treatment Item - DESKTOP */
 .treatmentItem {
   margin: 64px 0;
+  border: none; /* Ensure no border on desktop either */
 }
 .treatmentInner {
   display: grid;
@@ -147,7 +148,7 @@
   object-fit: cover;
 }
 
-/* alternate: when imagePosition is left we flip order */
+/* Alternate Layout (Desktop) */
 .isLeft .treatmentInner {
   grid-template-columns: 420px 1fr;
 }
@@ -158,81 +159,104 @@
   order: 1;
 }
 
-/* thin divider */
+/* IMPORTANT FIX: 
+   If your React component has a <div className={styles.sectionDivider}> 
+   we must hide it here, otherwise it might show a default border/line.
+*/
 .sectionDivider {
-  border: 0;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(76, 90, 161, 0.12),
-    transparent
-  );
-  margin-top: 36px;
+  display: none !important;
+  border: none !important;
+  height: 0;
+  width: 0;
+  margin: 0;
 }
 
-/* RESPONSIVE */
+/* =========================================
+   RESPONSIVE STYLES
+   ========================================= */
+
 @media (max-width: 1024px) {
-  .treatmentInner {
-    grid-template-columns: 1fr 340px;
+  .treatmentInner,
+  .isLeft .treatmentInner {
+    grid-template-columns: 1fr 300px;
   }
   .treatmentImage {
-    width: 300px;
+    width: 100%;
   }
   .pageTitle {
     font-size: 48px;
   }
+  .treatmentTitle {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 820px) {
+  :root {
+    --spacing: 20px;
+  }
+
+  /* Hero Safe Area */
   .heroContent {
-    left: 28px;
-    top: 28px;
+    left: 20px;
+    right: 20px;
+    top: 40px;
+    width: auto;
+    max-width: 100%;
   }
   .heroTitle {
-    font-size: 36px;
+    font-size: 32px;
+    margin-bottom: 8px;
   }
   .pageTitle {
-    font-size: 40px;
-    margin-top: 18px;
+    font-size: 36px;
+    margin-top: 20px;
   }
-  .treatmentInner {
-    grid-template-columns: 1fr;
+
+  /* Stack Layout */
+  .treatmentInner,
+  .isLeft .treatmentInner {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
   }
-  .treatmentImageWrap {
+
+  /* Order: Image Top, Text Bottom */
+  .treatmentImageWrap,
+  .isLeft .treatmentImageWrap {
+    order: 1;
+    width: 100%;
     justify-content: flex-start;
   }
+
+  .treatmentText,
+  .isLeft .treatmentText {
+    order: 2;
+    width: 100%;
+  }
+
   .treatmentImage {
     width: 100%;
-    max-width: 520px;
+    max-width: 100%;
+    height: auto;
+    max-height: 350px;
   }
-  .isLeft .treatmentText {
-    order: 1;
-  }
-  .isLeft .treatmentImageWrap {
-    order: 2;
-  }
-  .treatmentText {
-    order: 1;
-  }
-  .treatmentImageWrap {
-    order: 2;
-  }
-}
 
-@media (max-width: 480px) {
-  .pageTitle {
-    font-size: 32px;
-  }
-  .heroTitle {
-    font-size: 28px;
-  }
   .treatmentTitle {
-    font-size: 28px;
+    font-size: 26px;
+    margin-bottom: 12px;
   }
+
   .treatmentContent {
     font-size: 15px;
     line-height: 1.6;
+    text-align: left;
+  }
+
+  /* Force remove borders */
+  .treatmentItem {
+    margin: 40px 0;
+    padding-bottom: 0;
+    border-bottom: none !important; /* Force removal */
   }
 }

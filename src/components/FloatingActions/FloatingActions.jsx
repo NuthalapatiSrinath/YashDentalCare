@@ -29,7 +29,7 @@ export default function FloatingActions() {
     <div className={styles.container}>
       {/* WhatsApp Button (Left) */}
       <a
-        href="https://wa.me/919030655888" // Replace with your actual WhatsApp number
+        href="https://wa.me/918686818384" // Replace with your actual WhatsApp number
         target="_blank"
         rel="noopener noreferrer"
         className={styles.whatsappBtn}
